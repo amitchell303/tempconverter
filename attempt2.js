@@ -5,7 +5,6 @@
  * @param {number} f temperature in °F
  * @returns {number} temperature in °C
  */
-
 function convertToCelsius(f) {
   return ((f - 32) * 5) / 9;
 }
@@ -23,58 +22,27 @@ function convertToCelsius(f) {
  * @returns {string} the description from the table above corresponding to
  * the given Fahrenheit temperature `f`
  */
-
-function describeTemp(f) {
+function describeTemperature(f) {
   if (f < 32) {
-    console.log("Very Cold");
+    console.log("Very cold");
   } else if (f < 64) {
     console.log("Cold");
   } else if (f < 86) {
     console.log("Warm");
   } else if (f < 100) {
     console.log("Hot");
-  } else f >= 100;
-  console.log("Very Hot");
+  } else if (f >= 100) {
+    console.log("Very hot");
+  }
 }
-return describeTemp(f)
-
-// Attempts
-// if (f < 32) {
-//   console.log("Very cold");
-// } else if (f < 64) {
-//   console.log("Cold");
-// } else if (f < 86) {
-//   console.log("Warm");
-// } else if (f < 100) {
-//   console.log("Hot");
-// } else if (f >= 100) {
-//   console.log("Very hot");
-// }
-
-// const determinetemp = (f) => {
-//   if (f < 32) {
-//     console.log("Very cold");
-//   } else if (f < 64) {
-//     console.log("Cold");
-//   } else if (f)
-//     console.log("Warm");
-//   }
-// End of attempts
 
 /**
  * @param {number} limit
  * @returns {number} a random integer in the range [0, `limit`)
  */
-
 function getRandomInt(limit) {
   console.log(math.round(math.random() * limit) * 10);
 }
-// Why does the console say "math undefined if i dont have the '* 10'?"
-
-// function getRandomInt(limit) {
-//   console.log(Math.floor(Math.random() * limit));
-// }
-// This was my original code^, but to satisfy rubric, I used math.round and math.random below.
 
 // -------------------- DO NOT CHANGE THE CODE BELOW ---------------------- //
 /**
@@ -84,7 +52,7 @@ function getRandomInt(limit) {
  */
 function parseFahrenheit(f) {
   const c = convertToCelsius(f);
-  const description = describeTemp(f);
+  const description = describeTemperature(f);
   const message = `${f}°F is ${c}°C. That is ${description}.`;
   alert(message);
 }
